@@ -4,7 +4,7 @@ import java.util.*;
  * 作者：余秀良
  * 时间：2015年 02月 03日 上午8:59
  * 地点：成都
- * 描述：
+ * 描述：获取随机数和用户输入的数，返回结果
  * 备注：
  */
 public class CompareNumber {
