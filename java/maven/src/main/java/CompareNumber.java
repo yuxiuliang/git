@@ -26,7 +26,7 @@ public class CompareNumber {
     public String compaer(String input, String sysNum) {
         int a_count=0,b_count=0;
         for (int i=0;i<input.length();i++){
-            if (input.contains(sysNum.charAt(i)+" ")) {
+            if (input.contains(sysNum.charAt(i)+"")) {
                 b_count++;
             }
             if (input.charAt(i)== sysNum.charAt(i)) {

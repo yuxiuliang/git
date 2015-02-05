@@ -6,6 +6,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 import static org.fest.assertions.api.Assertions.fail;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * 作者：余秀良
@@ -142,5 +143,6 @@ public class AnswerGeneratorTest {
         }finally {
             assertThat(isNum).isEqualTo(false);
         }
+        //verify()
     }
 }

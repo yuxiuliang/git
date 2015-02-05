@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
@@ -8,6 +11,7 @@ import java.util.Scanner;
  * 备注：
  */
 public class Game {
+
     public  static  void gamePlay(int num){
         if (num == 6) {
             System.out.println("Welcome");
@@ -48,5 +52,34 @@ public class Game {
             Game.gamePlay(num);
             num--;
         }
+    }
+
+    private PrintStream out;
+    private final BufferedReader reader;
+    private final AnswerGenerator answerGenerator;
+    private final CompareNumber compareNumber;
+
+    public Game(PrintStream out,BufferedReader reader,AnswerGenerator answerGenerator,CompareNumber compareNumber) {
+        this.out = out;
+        this.reader = reader;
+        this.answerGenerator = answerGenerator;
+        this.compareNumber = compareNumber;
+    }
+    public void start() throws IOException {
+        int num=6;
+        out.println("welcome");
+        while (num>0){
+            out.println("Please input your number("+num+")");
+            String input = answerGenerator.getgenerate();
+            String answer = reader.readLine();
+            String result = compareNumber.compaer(input, answer);
+           if ("4A0B".equals(result)) {
+                out.println("congratulation");
+               return;
+            }
+            out.println(result);
+            num--;
+        }
+        out.print("over");
     }
 }

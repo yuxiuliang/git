@@ -59,12 +59,6 @@ public class AnswerGenerator {
         }
        return sb.toString();
     }
-
-    public static int generationRandom() {
-        int number=1234;
-        return number;
-    }
-
     /**
      * 测试三次不能出现重复随机数
      * @return
